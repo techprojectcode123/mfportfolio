@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom'; // Update the import statement
 import ValidationForm from '../components/ValidationForm';
+import '../App.css'; // Import the CSS file at the top of your component or page file
 
 function Validation() {
   const navigate = useNavigate(); // Use useNavigate hook for navigation
@@ -12,10 +13,11 @@ function Validation() {
   };
 
   return (
-    <div>
-      <h2>Validation Page</h2>
-      <ValidationForm onSubmit={handleFormSubmit} />
-    </div>
+<div className="container">
+  <h2>Validation Page</h2>
+  <ValidationForm onSubmit={handleFormSubmit} />
+</div>
+
   );
 }
 
