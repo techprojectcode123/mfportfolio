@@ -1,0 +1,12 @@
+.flexContainer {
+  display: flex;
+  align-items: center;  /* This vertically aligns the text and the input in case of height discrepancies */
+  gap: 10px;            /* This creates a gap between the label text and the input */
+}
+.nameInput {
+  /* Add your styles here. E.g.: */
+  border: 1px solid #ccc;
+  padding: 5px;
+  border-radius: 4px;
+  margin-left: 30px !important;
+}

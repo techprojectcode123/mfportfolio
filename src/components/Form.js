@@ -1,31 +1,33 @@
 import React from 'react';
+import styles from '../App.module.css';
 
 function Form({ onSubmit }) {
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Gather form data
     const formData = new FormData(e.target);
     const name = formData.get('name');
     const panCard = formData.get('panCard');
-    
-    // Perform API call (you need to implement this)
-    // After successful API call, navigate to the Validation page
-    // using React Router or any navigation library
     onSubmit();
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <label>
-        Name:
-        <input type="text" name="name" required />
-      </label>
-      <br />
-      <label>
-        PAN Card:
-        <input type="text" name="panCard" required />
-      </label>
-      <br />
+      <div className={styles.nameDiv}>
+        <label className={styles.flexContainer}>
+          Name:
+          <input className={styles.nameInput} type="text" name="name" required />  {/* Custom class applied here */}
+        </label>
+        <br />
+      </div>
+      <div className={styles.panCardDiv}>
+      <label className={styles.flexContainer}>
+          PAN Card:
+          <div className={styles.panCard}>
+            <input type="text" name="panCard" required />
+          </div>
+        </label>
+        <br />
+      </div>
       <button type="submit">Submit</button>
     </form>
   );
